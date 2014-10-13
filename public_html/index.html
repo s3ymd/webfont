@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Webフォント利用例</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style type="text/css">
+            @font-face
+            {
+                font-family: mplus-1p-regular;
+                src: url('http://mplus-fonts.sourceforge.jp/webfonts/mplus-1p-regular.ttf')
+                    format("truetype");
+            }
+        </style>
+
+    </head>
+    <body>
+        <div>あいうえお日本語漢字</div>
+        <div>01234567890</div>
+        <div>ABCDEFGHIJLMNOPRSTUVWXYZ</div>
+        <div>abcdefghijlmnopqstuvwxyz</div>
+        <input type="button" id="change-font" value="フォント変更(初回読み込み時は10秒以上かかります)">
+
+        <script type="text/javascript" src="js/libs/jquery/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(function () {
+                $("#change-font").click(function () {
+                    $("div").css("font-family", "mplus-1p-regular");
+                });
+            });
+        </script>
+    </body>
+</html>
