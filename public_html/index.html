@@ -17,6 +17,10 @@
                 font-family: kouzan;
                 src: url('kouzan.ttf');
             }
+            @font-face {
+                font-family: noto;
+                src: url('NotoSansCJKjp-Medium.otf');
+            }
             div {
                 font-size: 3rem;
             }
@@ -29,15 +33,21 @@
         <div>01234567890</div>
         <div>ABCDEFGHIJLMNOPRSTUVWXYZ</div>
         <div>abcdefghijlmnopqstuvwxyz</div>
+        <div>括弧・読点などの「約物（やくもの）」には、カーニング処理を行うと、見栄えが良くなります。</div>
         <input type="button" id="change-font" value="フォント変更(Webからの読み込み時は10秒以上かかる場合があります)">
+        <input type="button" id="change-kerning" value="カーニング調整">
 
         <script type="text/javascript" src="js/libs/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="js/libs/jquery/jquery.kerning.min.js"></script>
         <script type="text/javascript">
             $(function () {
                 $("#change-font").click(function () {
                     //$("div").css("font-family", "mplus-1p-regular");
                     //$("div").css("font-family", "yasashisa");
-                    $("div").css("font-family", "kouzan");
+                    $("div").css("font-family", "noto");
+                });
+                $("#change-kerning").click(function () {
+                    $("div").kerning();
                 });
             });
         </script>
