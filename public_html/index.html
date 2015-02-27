@@ -5,11 +5,20 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style type="text/css">
-            @font-face
-            {
+            @font-face {
                 font-family: mplus-1p-regular;
-                src: url('http://mplus-fonts.sourceforge.jp/webfonts/mplus-1p-regular.ttf')
-                    format("truetype");
+                src: url('http://mplus-fonts.sourceforge.jp/webfonts/mplus-1p-regular.ttf');
+            }
+            @font-face {
+                font-family: yasashisa;
+                src: url('yasashisa.otf');
+            }
+            @font-face {
+                font-family: kouzan;
+                src: url('kouzan.ttf');
+            }
+            div {
+                font-size: 3rem;
             }
         </style>
 
@@ -20,13 +29,15 @@
         <div>01234567890</div>
         <div>ABCDEFGHIJLMNOPRSTUVWXYZ</div>
         <div>abcdefghijlmnopqstuvwxyz</div>
-        <input type="button" id="change-font" value="フォント変更(初回読み込み時は10秒以上かかります)">
+        <input type="button" id="change-font" value="フォント変更(Webからの読み込み時は10秒以上かかる場合があります)">
 
         <script type="text/javascript" src="js/libs/jquery/jquery.min.js"></script>
         <script type="text/javascript">
             $(function () {
                 $("#change-font").click(function () {
-                    $("div").css("font-family", "mplus-1p-regular");
+                    //$("div").css("font-family", "mplus-1p-regular");
+                    //$("div").css("font-family", "yasashisa");
+                    $("div").css("font-family", "kouzan");
                 });
             });
         </script>
